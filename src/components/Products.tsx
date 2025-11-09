@@ -118,30 +118,33 @@ export default function Products() {
         </div>
 
         {/* المنتجات */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <div
               key={product.id}
-              className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-200 transform hover:-translate-y-1 border border-gray-100"
             >
               {/* الصورة */}
-              <div className="relative w-full bg-gray-100 flex items-center justify-center rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="relative bg-[#f9f9f9] flex items-center justify-center h-[280px] sm:h-[300px] overflow-hidden">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="max-h-[280px] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                  className="max-h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
                 />
               </div>
 
               {/* التفاصيل */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-[#111111] mb-1">{product.name}</h3>
-                <p className="text-sm text-gray-500 mb-2">
+              <div className="p-5 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-[#111111] mb-1">
+                  {product.name}
+                </h3>
+                <p className="text-sm text-gray-500 mb-1">
                   Modèle: {product.model} — {product.color}
                 </p>
                 <p className="text-sm text-gray-400 mb-3">{product.brand}</p>
 
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-5">
                   <span className="text-2xl font-bold text-[#0D47A1]">
                     {product.price.toLocaleString()} DA
                   </span>
@@ -152,11 +155,12 @@ export default function Products() {
                   )}
                 </div>
 
+                {/* ✅ زر واتساب بنفس الأخضر من الـHero */}
                 <button
                   onClick={() => handleOrder(product)}
-                  className="w-full bg-[#111111] hover:bg-[#0D47A1] text-white py-3 rounded-full font-semibold transition-all duration-300 flex items-center justify-center gap-2 group"
+                  className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white py-2.5 rounded-full font-semibold text-sm sm:text-base flex items-center justify-center gap-2 transition-all transform hover:scale-[1.03] shadow-lg"
                 >
-                  <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                   Commander sur WhatsApp
                 </button>
               </div>

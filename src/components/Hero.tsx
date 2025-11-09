@@ -36,10 +36,10 @@ export default function Hero() {
         maxHeight: '680px',
       }}
     >
-      {/* ✅ خلفية داكنة أنيقة */}
+      
       <div className="absolute inset-0 bg-gradient-to-br from-[#000000]/90 via-[#111111]/85 to-[#0D47A1]/60 z-0" />
 
-      {/* ✅ صور وسطية متناسقة */}
+      
       {images.map((img, index) => (
         <div
           key={index}
@@ -53,7 +53,7 @@ export default function Hero() {
             className="transition-transform duration-[1500ms] ease-in-out"
             style={{
               width: 'auto',
-              height: '65vh', // نفس الارتفاع لكل الصور
+              height: '65vh', 
               maxHeight: '520px',
               objectFit: 'contain',
               objectPosition: 'center center',
@@ -65,7 +65,7 @@ export default function Hero() {
         </div>
       ))}
 
-      {/* ✅ النص والمحتوى */}
+      
       <div className="relative z-10 text-center text-white px-4 max-w-3xl mx-auto mt-10 md:mt-0">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight leading-tight drop-shadow-lg">
           Edo’s Footwear <span className="text-[#0D47A1]">&</span> Eleman Shoes
