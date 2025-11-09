@@ -10,10 +10,10 @@ export default function Categories() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* Edo’s Footwear */}
+         
           <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer p-10">
             <img
-              src="/edo-noir.jpeg"
+              src="/Model C001-8.jpeg"
               alt="Edo’s Footwear"
               className="w-full h-60 object-cover rounded-xl mb-6 group-hover:scale-105 transition-transform duration-500"
             />
