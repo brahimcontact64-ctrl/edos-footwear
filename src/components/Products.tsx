@@ -19,7 +19,7 @@ const products: Product[] = [
     color: 'Noir',
     price: 9200,
     oldPrice: 12000,
-    image: '/Model C001-2.jpeg',
+    image: '/Model C001-2.png',
     brand: "Edo’s Footwear",
   },
   {
@@ -29,7 +29,7 @@ const products: Product[] = [
     color: 'Noir',
     price: 8900,
     oldPrice: 11500,
-    image: '/Model C001-3.jpeg',
+    image: '/Model C001-3.png',
     brand: "Edo’s Footwear",
   },
   {
@@ -39,7 +39,7 @@ const products: Product[] = [
     color: 'Kaki',
     price: 8800,
     oldPrice: 11200,
-    image: '/Model C001-4.jpeg',
+    image: '/Model C001-4.png',
     brand: "Edo’s Footwear",
   },
   {
@@ -49,7 +49,7 @@ const products: Product[] = [
     color: 'Camel',
     price: 9500,
     oldPrice: 12500,
-    image: '/Model C001-5.jpeg',
+    image: '/Model C001-5.png',
     brand: "Edo’s Footwear",
   },
   {
@@ -59,7 +59,7 @@ const products: Product[] = [
     color: 'Noir',
     price: 9700,
     oldPrice: 13000,
-    image: '/Model C001-6.jpeg',
+    image: '/Model C001-6.png',
     brand: "Edo’s Footwear",
   },
   {
@@ -69,7 +69,7 @@ const products: Product[] = [
     color: 'Noir',
     price: 9100,
     oldPrice: 12500,
-    image: '/Model C001-7.jpeg',
+    image: '/Model C001-7.png',
     brand: "Edo’s Footwear",
   },
   {
@@ -79,7 +79,7 @@ const products: Product[] = [
     color: 'Beige',
     price: 9300,
     oldPrice: 12500,
-    image: '/Model C001-8.jpeg',
+    image: '/Model C001-8.png',
     brand: "Edo’s Footwear",
   },
   {
@@ -89,7 +89,7 @@ const products: Product[] = [
     color: 'Noir',
     price: 9400,
     oldPrice: 12800,
-    image: '/Model C001-9.jpeg',
+    image: '/Model C001-9.png',
     brand: "Edo’s Footwear",
   },
 ];
@@ -107,6 +107,7 @@ export default function Products() {
   return (
     <section id="catalogue" className="py-20 bg-white">
       <div className="container mx-auto px-4">
+        {/* العنوان */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#111111] mb-4">
             Edo’s Footwear — Nouvelle Collection
@@ -116,20 +117,23 @@ export default function Products() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* المنتجات */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {products.map((product) => (
             <div
               key={product.id}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             >
-              <div className="relative overflow-hidden h-80">
+              {/* الصورة */}
+              <div className="relative w-full bg-gray-100 flex items-center justify-center rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="max-h-[280px] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
 
+              {/* التفاصيل */}
               <div className="p-6">
                 <h3 className="text-xl font-bold text-[#111111] mb-1">{product.name}</h3>
                 <p className="text-sm text-gray-500 mb-2">

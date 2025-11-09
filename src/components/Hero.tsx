@@ -8,11 +8,14 @@ export default function Hero() {
   );
 
   const images = [
-    '/edo-noir.jpeg',
-    '/edo-gris.jpeg',
-    '/eleman-noir.jpeg',
-    '/eleman-beige.jpeg',
-    '/elemant-gris.jpeg',
+    '/Model C001-2.png',
+    '/Model C001-3.png',
+    '/Model C001-4.png',
+    '/Model C001-5.png',
+    '/Model C001-6.png',
+    '/Model C001-7.png',
+    '/Model C001-8.png',
+    '/Model C001-9.png',
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
@@ -27,27 +30,44 @@ export default function Hero() {
   return (
     <section
       id="accueil"
-      className="relative h-[480px] md:h-[520px] flex items-center justify-center overflow-hidden"
+      className="relative flex items-center justify-center overflow-hidden"
+      style={{
+        height: '85vh',
+        maxHeight: '680px',
+      }}
     >
-      {/* خلفية الصور المتغيرة */}
+      {/* ✅ خلفية داكنة أنيقة */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#000000]/90 via-[#111111]/85 to-[#0D47A1]/60 z-0" />
+
+      {/* ✅ صور وسطية متناسقة */}
       {images.map((img, index) => (
         <div
           key={index}
-          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-[2000ms] ${
+          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-[1500ms] ease-in-out ${
             index === currentImage ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{
-            backgroundImage: `url(${img})`,
-          }}
-        ></div>
+        >
+          <img
+            src={img}
+            alt={`Edo’s Footwear ${index + 1}`}
+            className="transition-transform duration-[1500ms] ease-in-out"
+            style={{
+              width: 'auto',
+              height: '65vh', // نفس الارتفاع لكل الصور
+              maxHeight: '520px',
+              objectFit: 'contain',
+              objectPosition: 'center center',
+              filter:
+                'drop-shadow(0px 10px 30px rgba(0,0,0,0.5)) brightness(0.95) contrast(1.05)',
+              transform: index === currentImage ? 'scale(1)' : 'scale(1.05)',
+            }}
+          />
+        </div>
       ))}
 
-      {/* التدرج الداكن */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#111111]/90 via-[#000000]/80 to-[#0D47A1]/70"></div>
-
-      {/* النصوص */}
-      <div className="relative z-10 text-center text-white px-4 max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight leading-tight">
+      {/* ✅ النص والمحتوى */}
+      <div className="relative z-10 text-center text-white px-4 max-w-3xl mx-auto mt-10 md:mt-0">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight leading-tight drop-shadow-lg">
           Edo’s Footwear <span className="text-[#0D47A1]">&</span> Eleman Shoes
         </h1>
 
@@ -59,7 +79,7 @@ export default function Hero() {
           <span className="text-lg md:text-xl font-light">Confort</span>
         </div>
 
-        <p className="text-base md:text-lg mb-8 text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base md:text-lg mb-8 text-gray-300 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
           Deux marques, une passion pour l'élégance. Découvrez Edo’s Footwear et
           Eleman Shoes — le choix parfait pour l'homme moderne.
         </p>
@@ -68,7 +88,7 @@ export default function Hero() {
           href={`https://wa.me/${whatsappNumber}?text=${message}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20BA5A] text-white px-6 py-3 rounded-full text-base md:text-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
+          className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20BA5A] text-white px-6 py-3 rounded-full text-base md:text-lg font-semibold transition-all transform hover:scale-105 shadow-xl"
         >
           <MessageCircle className="w-5 h-5" />
           Commander sur WhatsApp

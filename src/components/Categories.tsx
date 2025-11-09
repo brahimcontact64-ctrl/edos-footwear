@@ -13,7 +13,7 @@ export default function Categories() {
          
           <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer p-10">
             <img
-              src="/Model C001-8.jpeg"
+              src="/Model C001-8.png"
               alt="Edo’s Footwear"
               className="w-full h-60 object-cover rounded-xl mb-6 group-hover:scale-105 transition-transform duration-500"
             />
